@@ -19,6 +19,9 @@ body{
     font-family: sans-serif;
     padding: 0 15px;
 }
+hr{
+    margin-bottom: 10px;
+}
 .header{
     position: sticky;
     top: 0;
@@ -139,6 +142,38 @@ body{
                         background-color: var(--aqi-5);
                     }
                 }
+            }
+            & .air-indices{
+                display: grid;
+                grid-template-columns: repeat(4, 1fr);
+                place-items: center;
+                & p{
+                    text-align: center;
+                }
+            }
+            & .sunrise-sunset{
+                display: grid;
+                grid-template-columns: repeat(4,1fr);
+                & .item{
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+                    & g2{
+                        margin-top: 15px;
+                    }
+                }
+            }
+            & .card-item{
+                display: flex;
+                justify-content: space-between;
+            }
+        }
+        & .hourly-forecast{
+            display: grid;
+            grid-template-columns: repeat(8, 1fr);
+            column-gap: 10px;
+            & .card{
+                text-align: center;
             }
         }
     }
