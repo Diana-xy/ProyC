@@ -2,7 +2,7 @@ body {
     margin: 0;
     font-family: 'Arial', sans-serif;
     background: linear-gradient(to bottom, #d4e1fc, #3d5476);
-    color: #fff;
+    color: #ffffff;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -94,6 +94,12 @@ body {
     gap: 10px;
     align-items: center;
 }
+.hourly-forecast p:nth-of-type(2){
+    font-size: 2rem;
+}
+.hourly-forecast p:first-of-type{
+    color: #02242a8e;
+}
 
 .hourly-forecast .card {
     width: 100%;
@@ -115,7 +121,7 @@ body {
     display: flex;
     justify-content: space-between;
     font-size: 0.9rem;
-    color: #aaa;
+    color: #000000;
 }
 
 .day-forecast {
@@ -133,8 +139,24 @@ body {
     padding: 10px;
 }
 
-.forecast-item {
+.forecast-item{
+    background-color: #f0f0f0;
+    padding: 10px;
+    margin: 5px;
+    border-radius: 5px;
     text-align: center;
+}
+.forecast-item p:first-of-type {
+    color: #02242a8e;
+    font-size: 18px;
+    margin: 5px 0; 
+}
+.forecast-item p, .forecast-item img {
+        margin: 2px 0;
+        }
+}
+.forecast-item img {
+    margin: 2px 0; 
 }
 
 .icon-wrapper {
@@ -169,7 +191,7 @@ body {
 
 .card-item i {
     font-size: 2rem;
-    color: #ffd700;
+    color: #02242a8e;
 }
 .air-indices {
     display: grid;
@@ -186,14 +208,16 @@ body {
     width: 100%; 
 }
 
-.air-indices .item p {
+.air-indices .item p{
     margin: 5px 0;
     font-size: 1rem;
+    color: #586473;
 }
 
 .air-indices .item h2 {
     margin: 0;
-    font-size: 1.5rem; 
+    font-size: 1.3rem;
+    color: #e8e9d4;
 }
 
 .sunrise-sunset {

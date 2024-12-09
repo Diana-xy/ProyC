@@ -68,11 +68,11 @@ function displayForecastData(forecastData) {
 
         const forecastHTML = `
             <div class="forecast-item">
+                <p>${dayName}</p>
                 <div class="icon-wrapper">
                     <img src="https://openweathermap.org/img/wn/${weatherIcon}@2x.png" alt="${description}">
                     <span>${temperature}°C</span>
                 </div>
-                <p>${dayName}</p>
                 <p>${description}</p>
             </div>
         `;
