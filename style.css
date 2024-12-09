@@ -1,180 +1,220 @@
-:root{
-    --bg-color1: #212529;
-    --bg-color2: #2a2b2d;
-    --aqi-1:#9ce157;
-    --aqi-2:#ffff58;
-    --aqi-3:#ffca28;
-    --aqi-4:#ff7043;
-    --aqi-5:#ef5350;
-}
-*{
+body {
     margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-body{
-    min-height: 100vh;
-    background-color: var(--bg-color1);
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(to bottom, #d4e1fc, #3d5476);
     color: #fff;
-    font-family: sans-serif;
-    padding: 0 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
 }
-hr{
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    background-color: #80aacf;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.header h2 {
+    font-size: 2rem;
     margin-bottom: 10px;
 }
-.header{
-    position: sticky;
-    top: 0;
-    background-color: var(--bg-color1);
+
+.clima-input {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.clima-input input {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    width: 300px;
+}
+
+.clima-input button {
+    padding: 10px;
+    background: #008cba;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.clima-input button:hover {
+    background: #005f7a;
+}
+
+.weather-data {
+    display: flex;
+    gap: 15px;
+}
+
+.weather-left{
+    flex: 0.3;
+    max-width: 20%;
+    border-radius: 10px;
+    padding: 15px;
+} 
+
+.weather-right {
+    flex: 0.5;
+    max-width: 50%;
+    border-radius: 10px;
+    padding: 15px;
+}
+
+.weather-left h2, .weather-center h2, .weather-right h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.weather-center {
+    flex: 0.4; 
+    max-width: 40%;
+    border-radius: 10px;
+    padding: 15px;
+}
+
+.hourly-forecast {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+}
+
+.hourly-forecast .card {
+    width: 100%;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.weather-center .card {
+    margin-bottom: 10px;
+}
+
+.weather-center .card h2 {
+    margin: 0 0 10px 0;
+}
+
+.card-footer {
     display: flex;
     justify-content: space-between;
+    font-size: 0.9rem;
+    color: #aaa;
+}
+
+.day-forecast {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
     align-items: center;
-    margin-bottom: 10px;
-    padding: 15px 0;
-    & #city_input{
-        background-color: var(--bg-color2);
-        border: none;
-        padding: 12px;
-        font-size: 16px;
-        border-radius: 30px;
-        color: #fff;
-        &:focus{
-            outline: none;
-        }
-    }
-    & #searchBtn{
-        border: none;
-        font-size: 16px;
-        padding: 12px;
-        border-radius: 30px;
-        background-color: #fff;
-        cursor: pointer;
-    }
-    & #locationBtn{
-        border: none;
-        font-size: 16px;
-        padding: 12px;
-        border-radius: 30px;
-        background-color: #409ef5;
-        cursor: pointer;
-    }
 }
-.card{
-    background-color: var(--bg-color2);
+
+.day-forecast .forecast-item {
+    width: 100%;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.forecast-item {
+    text-align: center;
+}
+
+.icon-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.highlights {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.highlights .card {
+    flex: 1 1 calc(50% - 10px);
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
     padding: 15px;
-    border-radius: 15px;
-    margin-bottom: 15px;
-    & p{
-        font-size: 14px;
-        color: #999;
-    }
-    & h2{
-        font-size: 32px;
-        font-weight: 500;
-    }
 }
-.weather-data{
+
+.card-head {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.card-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.card-item i {
+    font-size: 2rem;
+    color: #ffd700;
+}
+.air-indices {
     display: grid;
-    grid-template-columns: repeat(4,1fr);
-    gap: 12px;
-    & .weather-left{
-        grid-column: span 1;
-        & .ubicacion-actual{
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            & h2{
-                margin: 7px 0;
-            }
-            & p{
-                color: #fff;
-            }
-        }
-        & .card-footer p{
-            font-size: 14px;
-            margin-bottom: 12px;
-        }
-        & .forecast-item{
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            place-items: center;
-            margin-bottom: 15px;
-            & .icon-wrapper{
-                display: flex;
-                align-items: center;
-            }
-        }
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); /* Ajusta el número de columnas dinámicamente */
+    gap: 15px;
+    justify-items: center;
+    align-items: center;
+    padding: 10px;
+}
+.air-indices .item {
+    border-radius: 5px;
+    padding: 5px;
+    text-align: center;
+    width: 100%; 
+}
+
+.air-indices .item p {
+    margin: 5px 0;
+    font-size: 1rem;
+}
+
+.air-indices .item h2 {
+    margin: 0;
+    font-size: 1.5rem; 
+}
+
+.sunrise-sunset {
+    display: flex;
+    justify-content: space-around;
+    align-items: center; 
+    gap: 20px; 
+    padding: 10px;
+}
+
+
+@media (max-width: 768px) {
+    .weather-data {
+        grid-template-columns: 1fr;
     }
-    & .weather-right{
-        grid-column: span 3;
-        & h2{
-            margin-bottom: 10px;
-        }
-        & .highlights{
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            column-gap: 15px;
-            & .card:nth-of-type(1),
-            & .card:nth-of-type(2){
-                grid-column: span 2;
-            }
-            & .card-head{
-                display: flex;
-                justify-content: space-between;
-                margin-bottom: 10px;
-                & .air-index{
-                    color: #000;
-                    padding: 5px 10px;
-                    border-radius: 15px;
-                    &.aqi-1{
-                        background-color: var(--aqi-1);
-                    }
-                    &.aqi-2{
-                        background-color: var(--aqi-2);
-                    }
-                    &.aqi-3{
-                        background-color: var(--aqi-3);
-                    }
-                    &.aqi-4{
-                        background-color: var(--aqi-4);
-                    }
-                    &.aqi-5{
-                        background-color: var(--aqi-5);
-                    }
-                }
-            }
-            & .air-indices{
-                display: grid;
-                grid-template-columns: repeat(4, 1fr);
-                place-items: center;
-                & p{
-                    text-align: center;
-                }
-            }
-            & .sunrise-sunset{
-                display: grid;
-                grid-template-columns: repeat(4,1fr);
-                & .item{
-                    display: flex;
-                    align-items: center;
-                    gap: 10px;
-                    & g2{
-                        margin-top: 15px;
-                    }
-                }
-            }
-            & .card-item{
-                display: flex;
-                justify-content: space-between;
-            }
-        }
-        & .hourly-forecast{
-            display: grid;
-            grid-template-columns: repeat(8, 1fr);
-            column-gap: 10px;
-            & .card{
-                text-align: center;
-            }
-        }
+
+    .clima-input {
+        flex-direction: column;
+    }
+
+    .clima-input input, .clima-input button {
+        width: 100%;
     }
 }
